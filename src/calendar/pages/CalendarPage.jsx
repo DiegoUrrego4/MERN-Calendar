@@ -19,6 +19,21 @@ const events = [
   },
 ];
 
+const eventStyleGetter = (event, start, end, isSelected) => {
+  console.log({ event, start, end, isSelected });
+
+  const style = {
+    backgroundColor: '#347CF7',
+    borderRadius: '0px',
+    opacity: 0.8,
+    color: 'white',
+  };
+
+  return {
+    style,
+  };
+};
+
 export const CalendarPage = () => {
   return (
     <>
@@ -31,6 +46,7 @@ export const CalendarPage = () => {
         endAccessor='end'
         style={{ height: 'calc(100vh - 85px)' }}
         messages={getMessagesES()}
+        eventPropGetter={eventStyleGetter}
       />
     </>
   );
